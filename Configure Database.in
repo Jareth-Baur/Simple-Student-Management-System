@@ -1,0 +1,26 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS `Student Management System`;
+
+-- Select the database
+USE `Student Management System`;
+
+-- Create the Users table
+CREATE TABLE `users` (
+    `UserID` INT AUTO_INCREMENT PRIMARY KEY,
+    `Username` VARCHAR(50) NOT NULL UNIQUE,
+    `Password` VARCHAR(255) NOT NULL,
+    `DateAdded` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create the Students table
+CREATE TABLE `students` (
+    `StudentID` INT AUTO_INCREMENT PRIMARY KEY,
+    `FirstName` VARCHAR(255) NOT NULL,
+    `LastName` VARCHAR(255) NOT NULL,
+    `DateOfBirth` DATE NOT NULL,
+    `Gender` VARCHAR(50) NOT NULL,
+    `Email` VARCHAR(100) NOT NULL,
+    `PhoneNumber` VARCHAR(20) NOT NULL,
+    `Address` TEXT NOT NULL,
+    `DateAdded` DATE DEFAULT (CURRENT_DATE)
+);

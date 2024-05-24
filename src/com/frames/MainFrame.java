@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class MainFrame extends javax.swing.JFrame {
 
-    private final String SQLURL = "jdbc:mysql://localhost:3306/student management system";
+    private final String SQLURL = "jdbc:mysql://localhost:3306/Student Management System";
     private final String SQLUSERNAME = "user";
     private final String SQLPASSWORD = "user";
 
@@ -95,7 +95,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        viewButton.setText("View");
+        viewButton.setText("Manage");
         viewButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         viewButton.setPreferredSize(new java.awt.Dimension(95, 25));
         viewButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -122,7 +122,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel1.setText("SMS");
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Modify");
         deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -138,7 +138,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        addButton.setText("Add Record");
+        addButton.setText("Create");
         addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -288,7 +288,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         emailField.setBorder(javax.swing.BorderFactory.createTitledBorder("Email"));
 
-        dateOfBirthField.setBorder(javax.swing.BorderFactory.createTitledBorder("Date Of Birth"));
+        dateOfBirthField.setBorder(javax.swing.BorderFactory.createTitledBorder("Date Of Birth (yyyy-mm-dd)"));
 
         phoneNumberField.setBorder(javax.swing.BorderFactory.createTitledBorder("Phone Number"));
 
@@ -300,31 +300,30 @@ public class MainFrame extends javax.swing.JFrame {
             addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addNewRecordInnerPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(addNewRecordInnerPanelLayout.createSequentialGroup()
                         .addGroup(addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(studentIDField)
                             .addComponent(genderComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(addNewRecordInnerPanelLayout.createSequentialGroup()
                                 .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(dateOfBirthField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(dateOfBirthField, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(addNewRecordInnerPanelLayout.createSequentialGroup()
                                 .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(phoneNumberField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(phoneNumberField))))
                     .addGroup(addNewRecordInnerPanelLayout.createSequentialGroup()
                         .addComponent(programField, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(yearLevelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addComponent(yearLevelComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         addNewRecordInnerPanelLayout.setVerticalGroup(
             addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,11 +340,10 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(phoneNumberField, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(emailField))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(yearLevelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(programField, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(addNewRecordInnerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(programField, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(yearLevelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -375,7 +373,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(addStudentButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(clearButton)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         addNewRecordPanelLayout.setVerticalGroup(
             addNewRecordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
